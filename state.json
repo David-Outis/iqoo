@@ -1,27 +1,6 @@
 {
-  "products": {
-    "https://shop.iqoo.com/in/product/2057": {
-      "name": "Neo 10R Refurbished",
-      "in_stock": false
-    },
-    "https://shop.iqoo.com/in/product/2071": {
-      "name": "Z10x 5G Refurbished",
-      "in_stock": false
-    },
-    "https://shop.iqoo.com/in/product/2074": {
-      "name": "Z10 5G Refurbished",
-      "in_stock": false
-    },
-    "https://shop.iqoo.com/in/product/2070": {
-      "name": "Neo 10 Refurbished",
-      "in_stock": true
-    },
-    "https://shop.iqoo.com/in/product/2038": {
-      "name": "Neo 7 Pro - Refurbished",
-      "in_stock": false
-    }
-  },
-  "listing_titles": [
-    "Neo 10R Refurbished"
-  ]
+  "products": {},
+  "listing_titles": [],
+  "consecutive_full_failures": 0,
+  "last_summary_date": ""
 }
