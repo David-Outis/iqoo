@@ -1,0 +1,49 @@
+name: iQOO Refurbished Stock Check
+
+on:
+  workflow_dispatch: {}   # lets you trigger manually from the Actions tab
+  schedule:
+    # All times below are UTC. Combined, they cover 07:00 -> 24:00 IST
+    # (IST = UTC+5:30) every 10 minutes, and skip 00:00-07:00 IST as requested.
+    - cron: "30,40,50 1 * * *"   # 07:00, 07:10, 07:20 IST
+    - cron: "*/10 2-17 * * *"    # 07:30 IST through 23:20 IST, every 10 min
+    - cron: "0,10,20,30 18 * * *" # 23:30, 23:40, 23:50, 24:00(next day 00:00) IST
+
+permissions:
+  contents: write   # needed so the workflow can commit updated state.json
+
+concurrency:
+  group: iqoo-stock-check
+  cancel-in-progress: false
+
+jobs:
+  check-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run stock check
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python check_stock.py
+
+      - name: Commit updated state (if changed)
+        run: |
+          git config user.name "stock-check-bot"
+          git config user.email "actions@github.com"
+          git add state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update stock state [skip ci]"
+            git push
+          else
+            echo "No state change, skipping commit."
+          fi
