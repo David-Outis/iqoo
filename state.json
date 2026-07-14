@@ -2,8 +2,8 @@
   "products": {
     "https://shop.iqoo.com/in/product/2057": {
       "name": "Neo 10R Refurbished",
-      "in_stock": false,
-      "raw_status": "Out of stock"
+      "in_stock": true,
+      "raw_status": "IN STOCK (no out-of-stock marker found)"
     },
     "https://shop.iqoo.com/in/product/2071": {
       "name": "Z10x 5G Refurbished",
