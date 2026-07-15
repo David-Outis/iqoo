@@ -42,6 +42,9 @@ PRODUCT_URLS = [
     "https://shop.iqoo.com/in/product/2074",
     "https://shop.iqoo.com/in/product/2070",
     "https://shop.iqoo.com/in/product/2038",
+    "https://shop.iqoo.com/in/product/2049",
+    "https://shop.iqoo.com/in/product/2055",
+    "https://shop.iqoo.com/in/product/2066",
 ]
 
 LISTING_URL = "https://shop.iqoo.com/in/products/phone"
@@ -156,8 +159,13 @@ def check_product(url):
     out_of_stock = bool(re.search(r"out of stock", lowered))
     sold_out = bool(re.search(r"sold out", lowered))
     notify_me_cta = bool(re.search(r"notify me", lowered))
+    # iQOO's shop shows the literal word "unavailable" right next to the
+    # selected variant/buy button when that variant can't be purchased.
+    # This was the actual marker on product 2070's page and was previously
+    # unmatched, causing an out-of-stock page to be read as in stock.
+    unavailable_cta = bool(re.search(r"\bunavailable\b", lowered))
 
-    in_stock = not (out_of_stock or sold_out or notify_me_cta)
+    in_stock = not (out_of_stock or sold_out or notify_me_cta or unavailable_cta)
 
     if out_of_stock:
         raw_status = "Out of stock"
@@ -165,6 +173,8 @@ def check_product(url):
         raw_status = "Sold out"
     elif notify_me_cta:
         raw_status = "Out of stock ('Notify me' button present)"
+    elif unavailable_cta:
+        raw_status = "Out of stock ('unavailable' marker present)"
     else:
         raw_status = "IN STOCK (no out-of-stock marker found)"
 
