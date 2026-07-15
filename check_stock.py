@@ -483,7 +483,13 @@ def main():
                 message=f"'{title}' just appeared on the iQOO refurbished store.\n{LISTING_URL}",
                 url=LISTING_URL,
             )
-        listing_titles_to_save = list(current_listing)
+        # Accumulate rather than replace: iQOO's listing page only shows a
+        # subset of refurbished tiles at any given time (e.g. items seem to
+        # drop off the listing when out of stock and reappear later), so
+        # overwriting the saved set with just this run's snapshot caused
+        # already-notified titles (like "Neo 10R Refurbished") to look
+        # "new" again every time they flickered back into view.
+        listing_titles_to_save = list(prev_listing | current_listing)
     except Exception as e:
         print(f"! Error checking listing page after retries: {e}")
         listing_failed = True
