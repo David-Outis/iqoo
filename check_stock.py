@@ -72,6 +72,15 @@ FAILURE_ALERT_THRESHOLD = 3
 # IST hour (avoids sending it during the paused midnight-7am window)
 SUMMARY_MIN_IST_HOUR = 8
 
+# Weekly summary (NEW): sent once per ISO week, on this weekday (0=Monday),
+# not before this IST hour. Reuses SUMMARY_MIN_IST_HOUR-style gating so it
+# doesn't fire during the paused overnight window either.
+WEEKLY_SUMMARY_WEEKDAY = 0  # Monday
+WEEKLY_SUMMARY_MIN_IST_HOUR = 9
+
+# How many days of restock/sold-out history to retain in state.json
+HISTORY_RETENTION_DAYS = 30
+
 IST = timezone(timedelta(hours=5, minutes=30))
 
 # ---- STATE ------------------------------------------------------------------
@@ -178,7 +187,87 @@ def check_product(url):
     else:
         raw_status = "IN STOCK (no out-of-stock marker found)"
 
-    return {"name": name, "in_stock": in_stock, "raw_status": raw_status}
+    # NEW: best-effort variant-level availability (see check_variants above).
+    # Wrapped so any failure here can never affect the existing, working
+    # page-level in_stock/raw_status result above.
+    try:
+        variants = check_variants(resp.text)
+    except Exception as e:
+        print(f"  ! Skipping variant detection (non-fatal): {e}")
+        variants = []
+
+    return {"name": name, "in_stock": in_stock, "raw_status": raw_status, "variants": variants}
+
+
+# ---- SCRAPE: variant-level availability (NEW) --------------------------------
+#
+# Best-effort addition on top of the existing (working) page-level check.
+# iQOO's product page renders colour/storage "swatch" options as clickable
+# elements; when a specific combination is unavailable, the site marks that
+# option element as disabled (commonly via a `disable`/`disabled` class or
+# an `aria-disabled="true"` attribute). This walks those option elements and
+# reports which ones look disabled, so the notification can say e.g.
+# "8GB+128GB Inferno Red" is back rather than just the product name.
+#
+# This is intentionally isolated from check_product()/in_stock logic: if the
+# site's swatch markup doesn't match these heuristics, this simply returns
+# an empty list and the rest of the script behaves exactly as before.
+
+def check_variants(resp_text):
+    """
+    Returns a list of dicts: [{ "label": str, "available": bool }, ...]
+    Best-effort; returns [] if no recognizable swatch markup is found.
+    """
+    variants = []
+    try:
+        soup = BeautifulSoup(resp_text, "html.parser")
+
+        # Common patterns for swatch/option containers on this storefront
+        # template family (vivo/iQOO shop uses a shared shopex frontend).
+        candidates = soup.select(
+            "[class*='sku'], [class*='spec'], [class*='color'], "
+            "[class*='swatch'], [class*='option']"
+        )
+
+        seen_labels = set()
+        for el in candidates:
+            label = el.get_text(strip=True)
+            if not label or len(label) > 60:
+                continue
+            # Skip obvious non-variant boilerplate
+            if label.lower() in ("specification", "colour", "compare", "next"):
+                continue
+            if label in seen_labels:
+                continue
+
+            classes = " ".join(el.get("class", [])).lower()
+            aria_disabled = str(el.get("aria-disabled", "")).lower() == "true"
+            looks_disabled = (
+                aria_disabled
+                or "disable" in classes
+                or "unavailable" in classes
+                or "sold" in classes
+            )
+
+            # Only keep elements that look like actual selectable options
+            # (have a disabled-capable class hook or aria attribute at all,
+            # OR are short tokens typical of colour/storage labels).
+            is_probable_variant = (
+                aria_disabled
+                or "disable" in classes
+                or (el.name in ("li", "button", "div") and len(label.split()) <= 6)
+            )
+            if not is_probable_variant:
+                continue
+
+            seen_labels.add(label)
+            variants.append({"label": label, "available": not looks_disabled})
+
+    except Exception as e:
+        print(f"  ! Variant-level parsing failed (non-fatal): {e}")
+        return []
+
+    return variants
 
 
 # ---- SCRAPE: listing page for new refurbished entries -----------------------
@@ -208,6 +297,84 @@ def check_listing():
     return titles
 
 
+# ---- WEEKLY ROLLUP (NEW) ------------------------------------------------------
+#
+# Builds a "this week: X restocked twice, both sold out within 10 minutes"
+# style digest from the event history log. Purely additive: reads from
+# state["history"] (a list the main loop appends "restock"/"soldout" events
+# to) and never touches the existing product/listing/failure state.
+
+def build_weekly_summary(history, now_ist):
+    window_start = now_ist - timedelta(days=7)
+
+    # Group events by product url, in chronological order
+    by_url = {}
+    for ev in history:
+        try:
+            ts = datetime.fromisoformat(ev["ts"])
+        except Exception:
+            continue
+        if ts < window_start:
+            continue
+        by_url.setdefault(ev["url"], {"name": ev.get("name", ev["url"]), "events": []})
+        by_url[ev["url"]]["events"].append((ts, ev["event"]))
+
+    if not by_url:
+        return None
+
+    lines = []
+    for url, info in by_url.items():
+        events = sorted(info["events"], key=lambda e: e[0])
+        restocks = [e for e in events if e[1] == "restock"]
+        if not restocks:
+            continue
+
+        restock_count = len(restocks)
+        durations = []
+        for i, (ts, _) in enumerate(events):
+            if events[i][1] != "restock":
+                continue
+            # find the next soldout after this restock
+            for later_ts, later_ev in events[i + 1:]:
+                if later_ev == "soldout":
+                    durations.append(later_ts - ts)
+                    break
+
+        name = info["name"]
+        if durations:
+            fastest = min(durations)
+            mins = int(fastest.total_seconds() // 60)
+            if len(durations) == restock_count:
+                lines.append(
+                    f"- {name}: restocked {restock_count}x, sold out again "
+                    f"within {mins} min (fastest)"
+                )
+            else:
+                lines.append(
+                    f"- {name}: restocked {restock_count}x this week "
+                    f"({len(durations)} sold out again, fastest in {mins} min)"
+                )
+        else:
+            lines.append(f"- {name}: restocked {restock_count}x this week, still in stock")
+
+    if not lines:
+        return None
+    return "This week's restock activity:\n" + "\n".join(lines)
+
+
+def prune_history(history, now_ist):
+    cutoff = now_ist - timedelta(days=HISTORY_RETENTION_DAYS)
+    kept = []
+    for ev in history:
+        try:
+            ts = datetime.fromisoformat(ev["ts"])
+        except Exception:
+            continue
+        if ts >= cutoff:
+            kept.append(ev)
+    return kept
+
+
 # ---- MAIN --------------------------------------------------------------------
 
 def main():
@@ -216,6 +383,12 @@ def main():
     prev_listing = set(state.get("listing_titles", []))
     consecutive_failures = state.get("consecutive_full_failures", 0)
     last_summary_date = state.get("last_summary_date", "")
+
+    # NEW: variant-level state + event history for the weekly rollup
+    prev_variants = state.get("variants", {})
+    history = state.get("history", [])
+    last_weekly_summary_date = state.get("last_weekly_summary_date", "")
+    new_state_variants = {}
 
     new_state_products = {}
     product_errors = 0
@@ -246,6 +419,46 @@ def main():
                 message=f"{name} is now available! Tap to open (grab any color/variant that's in stock).\n{url}",
                 url=url,
             )
+
+        # NEW: log restock/soldout transitions for the weekly rollup.
+        # Purely additive - doesn't affect the notify() call above.
+        now_ist_iso = datetime.now(IST).isoformat()
+        if in_stock and not was_in_stock:
+            history.append({"ts": now_ist_iso, "url": url, "name": name, "event": "restock"})
+        elif was_in_stock and not in_stock:
+            history.append({"ts": now_ist_iso, "url": url, "name": name, "event": "soldout"})
+
+        # NEW: variant-level availability comparison (best-effort).
+        # If a specific colour/spec combo newly becomes available, call it
+        # out by name. Falls back silently if variants couldn't be parsed.
+        variants = result.get("variants", [])
+        if variants:
+            prev_variant_map = {
+                v["label"]: v["available"] for v in prev_variants.get(url, [])
+            }
+            newly_available = [
+                v["label"] for v in variants
+                if v["available"] and not prev_variant_map.get(v["label"], False)
+            ]
+            # Only call out specific variants if not every one of them just
+            # went from "no data" to available in one shot (first-ever run),
+            # and only when the product itself wasn't already fully in stock
+            # last run (avoids duplicate/noisy pings alongside the main
+            # restock notification above).
+            if newly_available and prev_variant_map and not (in_stock and was_in_stock):
+                notify(
+                    title=f"Variant available: {name}",
+                    message=(
+                        f"{name} - now available in: {', '.join(newly_available)}\n{url}"
+                    ),
+                    url=url,
+                    priority="urgent",
+                    tags="iphone,rotating_light",
+                )
+            new_state_variants[url] = variants
+        elif url in prev_variants:
+            # keep last known variant data if this run couldn't parse any
+            new_state_variants[url] = prev_variants[url]
 
         new_state_products[url] = {"name": name, "in_stock": in_stock, "raw_status": raw_status}
 
@@ -317,11 +530,34 @@ def main():
         )
         last_summary_date = today_str
 
+    # 5. Weekly rollup (NEW) - "this week: X restocked twice, sold out
+    #    within N min" style digest, built from the history log above.
+    if (
+        today_str != last_weekly_summary_date
+        and now_ist.weekday() == WEEKLY_SUMMARY_WEEKDAY
+        and now_ist.hour >= WEEKLY_SUMMARY_MIN_IST_HOUR
+    ):
+        weekly_msg = build_weekly_summary(history, now_ist)
+        if weekly_msg:
+            notify(
+                title="iQOO Stock - Weekly Summary",
+                message=weekly_msg,
+                priority="low",
+                tags="calendar,bar_chart",
+            )
+        last_weekly_summary_date = today_str
+
+    history = prune_history(history, now_ist)
+
     # ---- Save state ----
     state["products"] = new_state_products
     state["listing_titles"] = listing_titles_to_save
     state["consecutive_full_failures"] = consecutive_failures
     state["last_summary_date"] = last_summary_date
+    # NEW state fields (additive - safe to ignore on old state.json files)
+    state["variants"] = new_state_variants
+    state["history"] = history
+    state["last_weekly_summary_date"] = last_weekly_summary_date
     save_state(state)
 
     if product_errors or listing_failed:
