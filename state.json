@@ -1,1 +1,349 @@
-{}
+{
+  "products": {
+    "https://shop.iqoo.com/in/product/2057": {
+      "name": "Neo 10R Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock"
+    },
+    "https://shop.iqoo.com/in/product/2071": {
+      "name": "Z10x 5G Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock"
+    },
+    "https://shop.iqoo.com/in/product/2074": {
+      "name": "Z10 5G Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock"
+    },
+    "https://shop.iqoo.com/in/product/2070": {
+      "name": "Neo 10 Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock ('unavailable' marker present)"
+    },
+    "https://shop.iqoo.com/in/product/2038": {
+      "name": "Neo 7 Pro - Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock"
+    },
+    "https://shop.iqoo.com/in/product/2049": {
+      "name": "Z9s Pro 5G Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock ('unavailable' marker present)"
+    },
+    "https://shop.iqoo.com/in/product/2055": {
+      "name": "Z9x Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock ('unavailable' marker present)"
+    },
+    "https://shop.iqoo.com/in/product/2066": {
+      "name": "iQOO 13 Refurbished",
+      "in_stock": false,
+      "raw_status": "Out of stock"
+    }
+  },
+  "listing_titles": [
+    "Neo 10R Refurbished"
+  ],
+  "consecutive_full_failures": 0,
+  "last_summary_date": "2026-07-15",
+  "variants": {
+    "https://shop.iqoo.com/in/product/2057": [
+      {
+        "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourRaging BlueMoonKnight Titanium",
+        "available": true
+      },
+      {
+        "label": "Raging BlueMoonKnight Titanium",
+        "available": true
+      },
+      {
+        "label": "Raging Blue",
+        "available": true
+      },
+      {
+        "label": "MoonKnight Titanium",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2071": [
+      {
+        "label": "Specification6GB+128GB(5G)8GB+128GB(5G)8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "6GB+128GB(5G)8GB+128GB(5G)8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "6GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourUltramarineTitanium",
+        "available": true
+      },
+      {
+        "label": "UltramarineTitanium",
+        "available": true
+      },
+      {
+        "label": "Ultramarine",
+        "available": true
+      },
+      {
+        "label": "Titanium",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2074": [
+      {
+        "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourStellar BlackGlacier Silver",
+        "available": true
+      },
+      {
+        "label": "Stellar BlackGlacier Silver",
+        "available": true
+      },
+      {
+        "label": "Stellar Black",
+        "available": true
+      },
+      {
+        "label": "Glacier Silver",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2070": [
+      {
+        "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)16GB+512GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "16GB+512GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourTitanium ChromeInferno Red",
+        "available": true
+      },
+      {
+        "label": "Titanium ChromeInferno Red",
+        "available": true
+      },
+      {
+        "label": "Titanium Chrome",
+        "available": true
+      },
+      {
+        "label": "Inferno Red",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2038": [
+      {
+        "label": "Specification8GB+128GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourDark StormFearless Flame",
+        "available": true
+      },
+      {
+        "label": "Dark StormFearless Flame",
+        "available": true
+      },
+      {
+        "label": "Dark Storm",
+        "available": true
+      },
+      {
+        "label": "Fearless Flame",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2049": [
+      {
+        "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourFlamboyant OrangeLuxe Marble",
+        "available": true
+      },
+      {
+        "label": "Flamboyant OrangeLuxe Marble",
+        "available": true
+      },
+      {
+        "label": "Flamboyant Orange",
+        "available": true
+      },
+      {
+        "label": "Luxe Marble",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2055": [
+      {
+        "label": "Specification6GB+128GB(5G)8GB+128GB(5G)4GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "6GB+128GB(5G)8GB+128GB(5G)4GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "6GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "4GB+128GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourStorm GreyTornado Green",
+        "available": true
+      },
+      {
+        "label": "Storm GreyTornado Green",
+        "available": true
+      },
+      {
+        "label": "Storm Grey",
+        "available": true
+      },
+      {
+        "label": "Tornado Green",
+        "available": true
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2066": [
+      {
+        "label": "Specification12GB+256GB(5G)16GB+512GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)16GB+512GB(5G)",
+        "available": true
+      },
+      {
+        "label": "12GB+256GB(5G)",
+        "available": true
+      },
+      {
+        "label": "16GB+512GB(5G)",
+        "available": true
+      },
+      {
+        "label": "ColourLegendNardo Grey",
+        "available": true
+      },
+      {
+        "label": "LegendNardo Grey",
+        "available": true
+      },
+      {
+        "label": "Legend",
+        "available": true
+      },
+      {
+        "label": "Nardo Grey",
+        "available": true
+      }
+    ]
+  },
+  "history": [],
+  "last_weekly_summary_date": ""
+}
