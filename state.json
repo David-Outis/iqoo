@@ -12,8 +12,8 @@
     },
     "https://shop.iqoo.com/in/product/2074": {
       "name": "Z10 5G Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     },
     "https://shop.iqoo.com/in/product/2070": {
       "name": "Neo 10 Refurbished",
@@ -129,39 +129,39 @@
     "https://shop.iqoo.com/in/product/2074": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourStellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar Black",
-        "available": true
+        "available": false
       },
       {
         "label": "Glacier Silver",
-        "available": true
+        "available": false
       }
     ],
     "https://shop.iqoo.com/in/product/2070": [
@@ -388,6 +388,12 @@
       "ts": "2026-07-15T13:50:54.269011+05:30",
       "url": "https://shop.iqoo.com/in/product/2057",
       "name": "Neo 10R Refurbished",
+      "event": "soldout"
+    },
+    {
+      "ts": "2026-07-15T14:01:11.773454+05:30",
+      "url": "https://shop.iqoo.com/in/product/2074",
+      "name": "Z10 5G Refurbished",
       "event": "soldout"
     }
   ],
