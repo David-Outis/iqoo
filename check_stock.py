@@ -196,6 +196,16 @@ def check_product(url):
         print(f"  ! Skipping variant detection (non-fatal): {e}")
         variants = []
 
+    # If the page-level check already says the product is out of stock,
+    # trust that over the swatch scan. iQOO doesn't consistently mark
+    # individual colour/spec swatches as disabled even when the whole
+    # product can't be purchased (seen on product 2057 - "Out of stock"
+    # shown next to Add to cart, but all swatches still looked
+    # selectable), which was causing every variant to be reported as
+    # available and could trigger a false "variant available" alert.
+    if not in_stock and variants:
+        variants = [{**v, "available": False} for v in variants]
+
     return {"name": name, "in_stock": in_stock, "raw_status": raw_status, "variants": variants}
 
 
