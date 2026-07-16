@@ -12,8 +12,8 @@
     },
     "https://shop.iqoo.com/in/product/2074": {
       "name": "Z10 5G Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     },
     "https://shop.iqoo.com/in/product/2070": {
       "name": "Neo 10 Refurbished",
@@ -42,9 +42,9 @@
     }
   },
   "listing_titles": [
-    "Z10 5G Refurbished",
     "Z10x 5G Refurbished",
     "Neo 10R Refurbished",
+    "Z10 5G Refurbished",
     "Z10R 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
@@ -129,39 +129,39 @@
     "https://shop.iqoo.com/in/product/2074": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourStellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar Black",
-        "available": true
+        "available": false
       },
       {
         "label": "Glacier Silver",
-        "available": true
+        "available": false
       }
     ],
     "https://shop.iqoo.com/in/product/2070": [
@@ -424,6 +424,12 @@
       "ts": "2026-07-16T11:50:53.839294+05:30",
       "url": "https://shop.iqoo.com/in/product/2071",
       "name": "Z10x 5G Refurbished",
+      "event": "soldout"
+    },
+    {
+      "ts": "2026-07-16T11:55:32.489294+05:30",
+      "url": "https://shop.iqoo.com/in/product/2074",
+      "name": "Z10 5G Refurbished",
       "event": "soldout"
     }
   ],
