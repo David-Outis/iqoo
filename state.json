@@ -2,8 +2,8 @@
   "products": {
     "https://shop.iqoo.com/in/product/2057": {
       "name": "Neo 10R Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     },
     "https://shop.iqoo.com/in/product/2071": {
       "name": "Z10x 5G Refurbished",
@@ -42,9 +42,9 @@
     }
   },
   "listing_titles": [
-    "Z10R 5G Refurbished",
     "Neo 10R Refurbished",
     "Z10 5G Refurbished",
+    "Z10R 5G Refurbished",
     "Z10x 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
@@ -53,39 +53,39 @@
     "https://shop.iqoo.com/in/product/2057": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourRaging BlueMoonKnight Titanium",
-        "available": true
+        "available": false
       },
       {
         "label": "Raging BlueMoonKnight Titanium",
-        "available": true
+        "available": false
       },
       {
         "label": "Raging Blue",
-        "available": true
+        "available": false
       },
       {
         "label": "MoonKnight Titanium",
-        "available": true
+        "available": false
       }
     ],
     "https://shop.iqoo.com/in/product/2071": [
@@ -569,6 +569,12 @@
       "url": "https://shop.iqoo.com/in/product/2057",
       "name": "Neo 10R Refurbished",
       "event": "restock"
+    },
+    {
+      "ts": "2026-07-17T16:00:43.028540+05:30",
+      "url": "https://shop.iqoo.com/in/product/2057",
+      "name": "Neo 10R Refurbished",
+      "event": "soldout"
     }
   ],
   "last_weekly_summary_date": ""
