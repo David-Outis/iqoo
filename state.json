@@ -2,8 +2,8 @@
   "products": {
     "https://shop.iqoo.com/in/product/2057": {
       "name": "Neo 10R Refurbished",
-      "in_stock": false,
-      "raw_status": "Out of stock"
+      "in_stock": true,
+      "raw_status": "IN STOCK (no out-of-stock marker found)"
     },
     "https://shop.iqoo.com/in/product/2071": {
       "name": "Z10x 5G Refurbished",
@@ -42,9 +42,9 @@
     }
   },
   "listing_titles": [
-    "Z10 5G Refurbished",
-    "Z10R 5G Refurbished",
     "Z10x 5G Refurbished",
+    "Z10R 5G Refurbished",
+    "Z10 5G Refurbished",
     "Neo 10R Refurbished"
   ],
   "consecutive_full_failures": 0,
@@ -53,39 +53,39 @@
     "https://shop.iqoo.com/in/product/2057": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "ColourRaging BlueMoonKnight Titanium",
-        "available": false
+        "available": true
       },
       {
         "label": "Raging BlueMoonKnight Titanium",
-        "available": false
+        "available": true
       },
       {
         "label": "Raging Blue",
-        "available": false
+        "available": true
       },
       {
         "label": "MoonKnight Titanium",
-        "available": false
+        "available": true
       }
     ],
     "https://shop.iqoo.com/in/product/2071": [
@@ -539,6 +539,12 @@
       "url": "https://shop.iqoo.com/in/product/2057",
       "name": "Neo 10R Refurbished",
       "event": "soldout"
+    },
+    {
+      "ts": "2026-07-17T13:40:36.055851+05:30",
+      "url": "https://shop.iqoo.com/in/product/2057",
+      "name": "Neo 10R Refurbished",
+      "event": "restock"
     }
   ],
   "last_weekly_summary_date": ""
