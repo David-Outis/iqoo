@@ -42,9 +42,9 @@
     }
   },
   "listing_titles": [
-    "Z10 5G Refurbished",
     "Z10x 5G Refurbished",
     "Neo 10R Refurbished",
+    "Z10 5G Refurbished",
     "Z10R 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
@@ -123,44 +123,6 @@
       },
       {
         "label": "Titanium",
-        "available": false
-      }
-    ],
-    "https://shop.iqoo.com/in/product/2074": [
-      {
-        "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
-      },
-      {
-        "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
-      },
-      {
-        "label": "8GB+128GB(5G)",
-        "available": false
-      },
-      {
-        "label": "8GB+256GB(5G)",
-        "available": false
-      },
-      {
-        "label": "12GB+256GB(5G)",
-        "available": false
-      },
-      {
-        "label": "ColourStellar BlackGlacier Silver",
-        "available": false
-      },
-      {
-        "label": "Stellar BlackGlacier Silver",
-        "available": false
-      },
-      {
-        "label": "Stellar Black",
-        "available": false
-      },
-      {
-        "label": "Glacier Silver",
         "available": false
       }
     ],
