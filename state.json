@@ -42,10 +42,10 @@
     }
   },
   "listing_titles": [
-    "Neo 10R Refurbished",
-    "Z10 5G Refurbished",
     "Z10R 5G Refurbished",
-    "Z10x 5G Refurbished"
+    "Z10x 5G Refurbished",
+    "Z10 5G Refurbished",
+    "Neo 10R Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-07-23",
