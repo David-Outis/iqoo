@@ -43,8 +43,8 @@
   },
   "listing_titles": [
     "Z10R 5G Refurbished",
-    "Z10x 5G Refurbished",
     "Z10 5G Refurbished",
+    "Z10x 5G Refurbished",
     "Neo 10R Refurbished"
   ],
   "consecutive_full_failures": 0,
@@ -709,5 +709,5 @@
       "event": "soldout"
     }
   ],
-  "last_weekly_summary_date": "2026-07-20"
+  "last_weekly_summary_date": "2026-07-27"
 }
