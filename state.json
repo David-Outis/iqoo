@@ -2,8 +2,8 @@
   "products": {
     "https://shop.iqoo.com/in/product/2057": {
       "name": "Neo 10R Refurbished",
-      "in_stock": false,
-      "raw_status": "Out of stock"
+      "in_stock": true,
+      "raw_status": "IN STOCK (no out-of-stock marker found)"
     },
     "https://shop.iqoo.com/in/product/2071": {
       "name": "Z10x 5G Refurbished",
@@ -12,8 +12,8 @@
     },
     "https://shop.iqoo.com/in/product/2074": {
       "name": "Z10 5G Refurbished",
-      "in_stock": false,
-      "raw_status": "Out of stock"
+      "in_stock": true,
+      "raw_status": "IN STOCK (no out-of-stock marker found)"
     },
     "https://shop.iqoo.com/in/product/2070": {
       "name": "Neo 10 Refurbished",
@@ -37,18 +37,18 @@
     },
     "https://shop.iqoo.com/in/product/2066": {
       "name": "iQOO 13 Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     }
   },
   "listing_titles": [
-    "Neo 10 Refurbished",
     "Z10 Lite 5G Refurbished",
-    "iQOO 13 Refurbished",
-    "Neo 10R Refurbished",
-    "Z10x 5G Refurbished",
     "Z10R 5G Refurbished",
-    "Z10 5G Refurbished"
+    "Neo 10R Refurbished",
+    "Neo 10 Refurbished",
+    "Z10 5G Refurbished",
+    "iQOO 13 Refurbished",
+    "Z10x 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-08-07",
@@ -56,39 +56,39 @@
     "https://shop.iqoo.com/in/product/2057": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "ColourRaging BlueMoonKnight Titanium",
-        "available": false
+        "available": true
       },
       {
         "label": "Raging BlueMoonKnight Titanium",
-        "available": false
+        "available": true
       },
       {
         "label": "Raging Blue",
-        "available": false
+        "available": true
       },
       {
         "label": "MoonKnight Titanium",
-        "available": false
+        "available": true
       }
     ],
     "https://shop.iqoo.com/in/product/2071": [
@@ -132,39 +132,39 @@
     "https://shop.iqoo.com/in/product/2074": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "ColourStellar BlackGlacier Silver",
-        "available": false
+        "available": true
       },
       {
         "label": "Stellar BlackGlacier Silver",
-        "available": false
+        "available": true
       },
       {
         "label": "Stellar Black",
-        "available": false
+        "available": true
       },
       {
         "label": "Glacier Silver",
-        "available": false
+        "available": true
       }
     ],
     "https://shop.iqoo.com/in/product/2070": [
@@ -318,35 +318,35 @@
     "https://shop.iqoo.com/in/product/2066": [
       {
         "label": "Specification12GB+256GB(5G)16GB+512GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)16GB+512GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "16GB+512GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourLegendNardo Grey",
-        "available": true
+        "available": false
       },
       {
         "label": "LegendNardo Grey",
-        "available": true
+        "available": false
       },
       {
         "label": "Legend",
-        "available": true
+        "available": false
       },
       {
         "label": "Nardo Grey",
-        "available": true
+        "available": false
       }
     ]
   },
@@ -824,6 +824,24 @@
       "url": "https://shop.iqoo.com/in/product/2066",
       "name": "iQOO 13 Refurbished",
       "event": "restock"
+    },
+    {
+      "ts": "2026-08-07T14:05:29.582800+05:30",
+      "url": "https://shop.iqoo.com/in/product/2057",
+      "name": "Neo 10R Refurbished",
+      "event": "restock"
+    },
+    {
+      "ts": "2026-08-07T14:05:34.011435+05:30",
+      "url": "https://shop.iqoo.com/in/product/2074",
+      "name": "Z10 5G Refurbished",
+      "event": "restock"
+    },
+    {
+      "ts": "2026-08-07T14:05:44.287477+05:30",
+      "url": "https://shop.iqoo.com/in/product/2066",
+      "name": "iQOO 13 Refurbished",
+      "event": "soldout"
     }
   ],
   "last_weekly_summary_date": "2026-08-03"
