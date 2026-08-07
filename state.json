@@ -12,8 +12,8 @@
     },
     "https://shop.iqoo.com/in/product/2074": {
       "name": "Z10 5G Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     },
     "https://shop.iqoo.com/in/product/2070": {
       "name": "Neo 10 Refurbished",
@@ -42,13 +42,13 @@
     }
   },
   "listing_titles": [
-    "Neo 10 Refurbished",
+    "iQOO 13 Refurbished",
     "Neo 10R Refurbished",
-    "Z10R 5G Refurbished",
-    "Z10x 5G Refurbished",
-    "Z10 5G Refurbished",
     "Z10 Lite 5G Refurbished",
-    "iQOO 13 Refurbished"
+    "Neo 10 Refurbished",
+    "Z10 5G Refurbished",
+    "Z10x 5G Refurbished",
+    "Z10R 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-08-07",
@@ -132,39 +132,39 @@
     "https://shop.iqoo.com/in/product/2074": [
       {
         "label": "Specification8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourStellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar BlackGlacier Silver",
-        "available": true
+        "available": false
       },
       {
         "label": "Stellar Black",
-        "available": true
+        "available": false
       },
       {
         "label": "Glacier Silver",
-        "available": true
+        "available": false
       }
     ],
     "https://shop.iqoo.com/in/product/2070": [
@@ -859,6 +859,12 @@
       "ts": "2026-08-07T14:20:35.276458+05:30",
       "url": "https://shop.iqoo.com/in/product/2070",
       "name": "Neo 10 Refurbished",
+      "event": "soldout"
+    },
+    {
+      "ts": "2026-08-07T14:25:28.999953+05:30",
+      "url": "https://shop.iqoo.com/in/product/2074",
+      "name": "Z10 5G Refurbished",
       "event": "soldout"
     }
   ],
