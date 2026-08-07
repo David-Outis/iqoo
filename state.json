@@ -17,8 +17,8 @@
     },
     "https://shop.iqoo.com/in/product/2070": {
       "name": "Neo 10 Refurbished",
-      "in_stock": true,
-      "raw_status": "IN STOCK (no out-of-stock marker found)"
+      "in_stock": false,
+      "raw_status": "Out of stock"
     },
     "https://shop.iqoo.com/in/product/2038": {
       "name": "Neo 7 Pro - Refurbished",
@@ -42,13 +42,13 @@
     }
   },
   "listing_titles": [
-    "Neo 10R Refurbished",
+    "Z10x 5G Refurbished",
+    "Neo 10 Refurbished",
     "Z10 5G Refurbished",
     "Z10R 5G Refurbished",
-    "Neo 10 Refurbished",
-    "iQOO 13 Refurbished",
     "Z10 Lite 5G Refurbished",
-    "Z10x 5G Refurbished"
+    "iQOO 13 Refurbished",
+    "Neo 10R Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-08-07",
@@ -170,39 +170,39 @@
     "https://shop.iqoo.com/in/product/2070": [
       {
         "label": "8GB+128GB(5G)8GB+256GB(5G)12GB+256GB(5G)16GB+512GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+128GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "8GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "16GB+512GB(5G)",
-        "available": true
+        "available": false
       },
       {
         "label": "ColourTitanium ChromeInferno Red",
-        "available": true
+        "available": false
       },
       {
         "label": "Titanium ChromeInferno Red",
-        "available": true
+        "available": false
       },
       {
         "label": "Titanium Chrome",
-        "available": true
+        "available": false
       },
       {
         "label": "Inferno Red",
-        "available": true
+        "available": false
       }
     ],
     "https://shop.iqoo.com/in/product/2038": [
@@ -920,6 +920,12 @@
       "url": "https://shop.iqoo.com/in/product/2070",
       "name": "Neo 10 Refurbished",
       "event": "restock"
+    },
+    {
+      "ts": "2026-08-07T16:25:42.575392+05:30",
+      "url": "https://shop.iqoo.com/in/product/2070",
+      "name": "Neo 10 Refurbished",
+      "event": "soldout"
     }
   ],
   "last_weekly_summary_date": "2026-08-03"
