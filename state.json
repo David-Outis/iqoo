@@ -37,18 +37,18 @@
     },
     "https://shop.iqoo.com/in/product/2066": {
       "name": "iQOO 13 Refurbished",
-      "in_stock": false,
-      "raw_status": "Out of stock"
+      "in_stock": true,
+      "raw_status": "IN STOCK (no out-of-stock marker found)"
     }
   },
   "listing_titles": [
     "Neo 10 Refurbished",
     "Z10 Lite 5G Refurbished",
-    "Z10R 5G Refurbished",
-    "Z10 5G Refurbished",
+    "iQOO 13 Refurbished",
     "Neo 10R Refurbished",
     "Z10x 5G Refurbished",
-    "iQOO 13 Refurbished"
+    "Z10R 5G Refurbished",
+    "Z10 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-08-07",
@@ -318,35 +318,35 @@
     "https://shop.iqoo.com/in/product/2066": [
       {
         "label": "Specification12GB+256GB(5G)16GB+512GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "12GB+256GB(5G)16GB+512GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "12GB+256GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "16GB+512GB(5G)",
-        "available": false
+        "available": true
       },
       {
         "label": "ColourLegendNardo Grey",
-        "available": false
+        "available": true
       },
       {
         "label": "LegendNardo Grey",
-        "available": false
+        "available": true
       },
       {
         "label": "Legend",
-        "available": false
+        "available": true
       },
       {
         "label": "Nardo Grey",
-        "available": false
+        "available": true
       }
     ]
   },
@@ -818,6 +818,12 @@
       "url": "https://shop.iqoo.com/in/product/2074",
       "name": "Z10 5G Refurbished",
       "event": "soldout"
+    },
+    {
+      "ts": "2026-08-07T14:00:53.655703+05:30",
+      "url": "https://shop.iqoo.com/in/product/2066",
+      "name": "iQOO 13 Refurbished",
+      "event": "restock"
     }
   ],
   "last_weekly_summary_date": "2026-08-03"
