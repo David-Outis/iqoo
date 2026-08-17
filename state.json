@@ -42,13 +42,13 @@
     }
   },
   "listing_titles": [
-    "Z10R 5G Refurbished",
     "Z10 5G Refurbished",
+    "Neo 10R Refurbished",
     "Z10x 5G Refurbished",
     "Z10 Lite 5G Refurbished",
-    "Neo 10 Refurbished",
-    "Neo 10R Refurbished",
-    "iQOO 13 Refurbished"
+    "Z10R 5G Refurbished",
+    "iQOO 13 Refurbished",
+    "Neo 10 Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-08-17",
@@ -274,6 +274,44 @@
       },
       {
         "label": "Luxe Marble",
+        "available": false
+      }
+    ],
+    "https://shop.iqoo.com/in/product/2055": [
+      {
+        "label": "Specification6GB+128GB(5G)8GB+128GB(5G)4GB+128GB(5G)",
+        "available": false
+      },
+      {
+        "label": "6GB+128GB(5G)8GB+128GB(5G)4GB+128GB(5G)",
+        "available": false
+      },
+      {
+        "label": "6GB+128GB(5G)",
+        "available": false
+      },
+      {
+        "label": "8GB+128GB(5G)",
+        "available": false
+      },
+      {
+        "label": "4GB+128GB(5G)",
+        "available": false
+      },
+      {
+        "label": "ColourStorm GreyTornado Green",
+        "available": false
+      },
+      {
+        "label": "Storm GreyTornado Green",
+        "available": false
+      },
+      {
+        "label": "Storm Grey",
+        "available": false
+      },
+      {
+        "label": "Tornado Green",
         "available": false
       }
     ],
