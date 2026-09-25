@@ -44,11 +44,11 @@
   "listing_titles": [
     "Neo 10 Refurbished",
     "Neo 10R Refurbished",
-    "Z10 Lite 5G Refurbished",
     "iQOO 13 Refurbished",
+    "Z10 Lite 5G Refurbished",
     "Z10 5G Refurbished",
-    "Z10R 5G Refurbished",
-    "Z10x 5G Refurbished"
+    "Z10x 5G Refurbished",
+    "Z10R 5G Refurbished"
   ],
   "consecutive_full_failures": 0,
   "last_summary_date": "2026-09-25",
@@ -351,24 +351,6 @@
     ]
   },
   "history": [
-    {
-      "ts": "2026-08-26T16:05:21.016377+05:30",
-      "url": "https://shop.iqoo.com/in/product/2057",
-      "name": "Neo 10R Refurbished",
-      "event": "restock"
-    },
-    {
-      "ts": "2026-08-26T16:05:24.570145+05:30",
-      "url": "https://shop.iqoo.com/in/product/2074",
-      "name": "Z10 5G Refurbished",
-      "event": "restock"
-    },
-    {
-      "ts": "2026-08-26T16:05:26.518452+05:30",
-      "url": "https://shop.iqoo.com/in/product/2070",
-      "name": "Neo 10 Refurbished",
-      "event": "restock"
-    },
     {
       "ts": "2026-08-26T16:10:26.887596+05:30",
       "url": "https://shop.iqoo.com/in/product/2057",
